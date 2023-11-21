@@ -27,7 +27,18 @@ background: url(<path-to-image>), lightgray 50% / cover no-repeat;
 box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 */
 
-const GridItem = ({ img, text, itemClass, onClick }) => {
+const GridItem = ({
+  img,
+  text,
+  title,
+  onClick,
+  date,
+  time,
+  place,
+  itemClass,
+  category,
+  priority,
+}) => {
   const imageWrapperStyle = "h-[336px] relative";
   const imageStyle = "w-full h-full";
   const itemStyle = "w-[302px] h-[480px]";
@@ -41,24 +52,39 @@ const GridItem = ({ img, text, itemClass, onClick }) => {
         <img className={imageStyle} src={img} alt={text} />
         <div
           className="absolute bottom-0 w-full flex justify-between px-4 py-2 
-        text-accent-500 bg-[rgba(255,255,255,0.80)]"
+        text-accent-500 bg-[rgba(255,255,255,0.80)] text-sm leading-6"
         >
-          <p>data</p>
-          <p>place</p>
+          <p>
+            {date} at {time}
+          </p>
+          <p>{place}</p>
         </div>
+        {category ||
+          (priority && (
+            <div className="absolute top-0 flex gap-3">
+              <p>{category}</p>
+              <p>{priority}</p>
+            </div>
+          ))}
       </div>
-      <div>
-        <h3>Opening</h3>
-        <p>text</p>
+      <div className="inline-block py-4 pl-2">
+        <h3 className="text-[#1C1B1F] text-base font-medium">{title}</h3>
+        <p className="text-[#49454F] mt-4 text-sm">{text}</p>
       </div>
     </li>
   );
 };
 
 GridItem.defaultProps = {
-  text: "Beautifull event",
+  title: "Gallery opening",
+  text: " Discover an enchanting evening celebrating the world of art at our exclusive gallery opening.",
   img: image,
+  date: "12.07",
+  time: "12:00",
+  place: "Kyiv",
   onClick: () => {},
+  category: "",
+  priority: "",
 };
 
 GridItem.propTypes = {
@@ -66,6 +92,11 @@ GridItem.propTypes = {
   img: PropTypes.string,
   text: PropTypes.string,
   onClick: PropTypes.func,
+  date: PropTypes.string,
+  time: PropTypes.string,
+  place: PropTypes.string,
+  category: PropTypes.string,
+  priority: PropTypes.string,
 };
 
 export default GridItem;
