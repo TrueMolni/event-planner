@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const LangSwitcher = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
 
-  const handleLanguageChange = (event) => {
+  const handleLanguageChange = event => {
     setSelectedLanguage(event.target.value);
     // Тут ви також можете додати логіку для зміни мови в вашому додатку
   };
 
   return (
-    <div className="relative inline-block text-left ">
+    <div className="mm:absolute mm:right-[22px] ml-[22px] inline-block text-left ">
       <select
         className="block rounded-lg appearance-none text w-full shadow-base bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight"
         value={selectedLanguage}

@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
-import Logo from "./Logo";
-import LangSwitcher from "./LangSwitcher";
-import Search from "./Search";
+import Logo from './Logo';
+import LangSwitcher from './LangSwitcher';
+import Search from './Search';
 
-const Header = (props) => {
+const Header = props => {
   return (
     <header
-      className="
-    flex flex-wrap shrink-0 gap-6 justify-between h-[168px] p-6 border-b border-accent-500
+      className="mm:relative
+    flex flex-wrap md:items-center shrink-0 gap-6 justify-between h-[168px] md:h-[92px] p-6 border-b border-accent-500
      md:px-10 md:pt-[26px] md:pb-[18px]"
     >
       <Logo />
-      <LangSwitcher />
       <Search />
+      <LangSwitcher />
     </header>
   );
 };

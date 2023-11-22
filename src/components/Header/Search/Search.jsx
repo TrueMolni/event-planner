@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import sprite from "../../../shared/images/icons/sprite.svg";
+import sprite from '../../../shared/images/icons/sprite.svg';
 
 const Search = () => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const searchHandler = ({ target }) => {
     setSearchValue(target.value);
   };
 
   const clearSearch = () => {
-    setSearchValue("");
+    setSearchValue('');
   };
 
-  const icons = ["#icon-search", "#icon-cross-small"];
+  const icons = ['#icon-search', '#icon-cross-small'];
 
   return (
-    <label className="flex gap-4 w-[272px] p-3 text-sm leading-[14px] text-accent-500 shadow-base ">
+    <label className="flex gap-4 w-[272px] p-3 text-sm leading-[14px] text-accent-500 shadow-base rounded">
       <button>
         <svg className="w-6 h-6">
           <use href={sprite + icons[0]}></use>
