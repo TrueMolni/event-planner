@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import IconBtn from '../../../shared/components/IconBtn';
 
 const EventsNav = () => {
+  const navigate = useNavigate();
+  const goToAddEventPage = () => {
+    navigate('/add-event');
+  };
   const iconPath = ['#icon-filters-2', '#icon-filters-3', '#icon-plus'];
 
   return (
@@ -25,7 +30,11 @@ const EventsNav = () => {
           />
         </svg>
       </button>
-      <IconBtn customClass={'bg-accent-500'} icon={iconPath[2]} />
+      <IconBtn
+        customClass={'bg-accent-500'}
+        icon={iconPath[2]}
+        onClick={goToAddEventPage}
+      />
     </div>
   );
 };

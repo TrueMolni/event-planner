@@ -1,14 +1,19 @@
-import React from 'react';
+import { useState } from 'react';
 import { useForm, Resolver } from 'react-hook-form';
-
 import * as yup from 'yup';
+
+import { addEvent } from 'shared/data/events-api';
+import inititalState from './initialState';
 
 const schema = yup.object().shape({
   title: yup.string().required('Title is required'),
   description: yup.string().required('Description is required'),
-  date: yup.date().required('Date is required'),
+  date: yup.string().required('Date is required'),
   time: yup.string().required('Time is required'),
-  image: yup.string().url('Invalid URL').required('Image URL is required'),
+  image: yup
+    .string()
+    .matches(/(https?:\/\/.*\.(?:png|jpg))/, 'Invalid URL')
+    .required('Image URL is required'),
   location: yup.string().required('Location is required'),
 });
 
@@ -36,6 +41,8 @@ const resolver: Resolver = async (data, context) => {
 };
 
 const AddForm = () => {
+  const [data, setData] = useState({ ...inititalState });
+
   const {
     register,
     handleSubmit,
@@ -44,23 +51,38 @@ const AddForm = () => {
     resolver: resolver,
   });
 
-  const onSubmit = data => {
-    console.log(data); // Обробка даних форми
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+
+    setData(prevState => {
+      return { ...prevState, [name]: value };
+    });
   };
+
+  const onSubmit = formData => {
+    addEvent(formData);
+    setData(inititalState);
+  };
+
+  const { title, description, time, date, image, location } = data;
 
   return (
     <div>
-      <h1>Create new event</h1>
+      <h1 className="text-[#3F3F3F] font-semibold text-[24px] leading-9 ">
+        Create new event
+      </h1>
       <form
-        className="bg-white p-4 rounded shadow max-w-md mx-auto"
+        className="bg-white p-4 rounded shadow max-w-md mx-auto "
         onSubmit={handleSubmit(onSubmit)}
       >
         <label>
           Title
           <input
             {...register('title')}
+            value={title}
             type="text"
             className="border p-2 w-full"
+            onChange={handleChange}
           />
           <p className="text-red-500">{errors.title?.message}</p>
         </label>
@@ -69,12 +91,13 @@ const AddForm = () => {
           Description
           <textarea
             {...register('description')}
-            name="about"
+            name="description"
+            value={description}
             rows={3}
             className="block w-full rounded-md border-0 py-1.5 
               text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400
                focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            defaultValue={''}
+            onChange={handleChange}
           />
           <p className="text-red-500">{errors.description?.message}</p>
         </label>
@@ -83,7 +106,10 @@ const AddForm = () => {
           <input
             {...register('date')}
             type="text"
+            name="date"
+            value={date}
             className="border p-2 w-full"
+            onChange={handleChange}
           />
           <p className="text-red-500">{errors.date?.message}</p>
         </label>
@@ -92,7 +118,10 @@ const AddForm = () => {
           <input
             {...register('time')}
             type="text"
+            name="time"
+            value={time}
             className="border p-2 w-full"
+            onChange={handleChange}
           />
           <p className="text-red-500">{errors.time?.message}</p>
         </label>
@@ -100,8 +129,11 @@ const AddForm = () => {
           Add picture
           <input
             {...register('image')}
+            name="image"
             type="text"
+            value={image}
             className="border p-2 w-full"
+            onChange={handleChange}
           />
           <p className="text-red-500">{errors.image?.message}</p>
         </label>
@@ -109,8 +141,11 @@ const AddForm = () => {
           Location
           <input
             {...register('location')}
+            name="location"
             type="text"
+            value={location}
             className="border p-2 w-full"
+            onChange={handleChange}
           />
           <p className="text-red-500">{errors.location?.message}</p>
         </label>

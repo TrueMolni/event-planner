@@ -1,20 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import sprite from "../../images/icons/sprite.svg";
+import sprite from '../../images/icons/sprite.svg';
 
 const IconBtn = ({ icon, type, onClick, customClass, customIconClass }) => {
-  const btnClass = "p-4 inline-flex justify-center items-center rounded-lg";
-  const IconClass = "w-6 h-6";
+  const btnClass = 'p-4 inline-flex justify-center items-center rounded-lg';
+  const IconClass = 'w-6 h-6';
   return (
     <button
       type={type}
-      className={!customClass ? btnClass : btnClass + " " + customClass}
+      className={!customClass ? btnClass : btnClass + ' ' + customClass}
       onClick={onClick}
     >
       <svg
         className={
-          !customIconClass ? IconClass : IconClass + " " + customIconClass
+          !customIconClass ? IconClass : IconClass + ' ' + customIconClass
         }
       >
         <use href={sprite + icon}></use>
@@ -24,10 +24,10 @@ const IconBtn = ({ icon, type, onClick, customClass, customIconClass }) => {
 };
 
 IconBtn.defaultProps = {
-  icon: "#icon-cross-small",
-  type: "button",
-  customClass: "",
-  customIconClass: "",
+  icon: '#icon-cross-small',
+  type: 'button',
+  customClass: '',
+  customIconClass: '',
 };
 
 IconBtn.propTypes = {

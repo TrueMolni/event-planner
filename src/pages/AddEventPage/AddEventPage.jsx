@@ -1,19 +1,14 @@
-import React from "react";
-import AddForm from "../../components/AddForm";
+import React from 'react';
+import AddForm from '../../components/AddForm';
+import BackBtn from 'shared/components/BackBtn';
 
 const AddEventPage = () => {
-  return <AddForm />;
+  return (
+    <>
+      <BackBtn />
+      <AddForm />
+    </>
+  );
 };
 
 export default AddEventPage;
-/*
- itemClass: PropTypes.string,
-  img: PropTypes.string,
-  text: PropTypes.string,
-  onClick: PropTypes.func,
-  date: PropTypes.string,
-  time: PropTypes.string,
-  place: PropTypes.string,
-  category: PropTypes.string,
-  priority: PropTypes.string,
-*/

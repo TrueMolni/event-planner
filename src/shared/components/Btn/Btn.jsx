@@ -2,29 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Btn = ({ text, customClass, onClick }) => {
+  const buttonStyles =
+    'flex justify center items-center rounded-lg py-[10px] px-6 bg-accent-500 text-[#f3f3f3]';
+
   return (
     <button
       onClick={onClick}
-      className={!customClass ? css.button : css.button + ' ' + customClass}
+      className={!customClass ? buttonStyles : buttonStyles + ' ' + customClass}
     >
       {text}
     </button>
   );
 };
 
-/*
-display: inline-flex;
-padding: 10px 24px;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 10px;
-
-
-*/
-
 Btn.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   text: PropTypes.string.isRequired,
   customClass: PropTypes.string,
 };

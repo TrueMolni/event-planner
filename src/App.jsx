@@ -6,6 +6,7 @@ import './App.css';
 
 const MainPage = lazy(() => import('./pages/MainPage'));
 const AddEventPage = lazy(() => import('./pages/AddEventPage'));
+const AboutEventPage = lazy(() => import('./pages/AboutEventPage'));
 
 const App = () => (
   <BrowserRouter basename="event-planner">
@@ -14,6 +15,7 @@ const App = () => (
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<MainPage />} />
           <Route path="/add-event" element={<AddEventPage />} />
+          <Route path="/event/:id" element={<AboutEventPage />} />
           {/* <Route path="*" element={<p>Not found here</p>}></Route> */}
         </Route>
       </Routes>
