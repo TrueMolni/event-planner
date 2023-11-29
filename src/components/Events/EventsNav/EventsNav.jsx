@@ -12,9 +12,9 @@ const EventsNav = () => {
 
   return (
     <div className="flex justify-end items-center gap-[24px] mb-10">
-      <IconBtn icon={iconPath[1]} />
+      <IconBtn icon={iconPath[1]} customClass="disabled" />
       {/* <IconBtn icon={iconPath[0]} /> */}
-      <button>
+      <button className="cursor-pointer disabled">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -31,7 +31,7 @@ const EventsNav = () => {
         </svg>
       </button>
       <IconBtn
-        customClass={'bg-accent-500'}
+        customClass={'bg-accent-500 hover:bg-hover-500 transition-colors'}
         icon={iconPath[2]}
         onClick={goToAddEventPage}
       />

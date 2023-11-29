@@ -31,10 +31,10 @@ const EventsItem = ({
     return new Intl.DateTimeFormat('en-US', options).format(dateObject);
   };
 
-  const imageWrapperStyle = 'h-[336px] relative ';
+  const imageWrapperStyle = 'h-[280px] relative ';
   const imageStyle = 'w-full h-full rounded-lg';
   const itemStyle =
-    'flex flex-col items-center w-[271px] md:w-[332px] h-[480px] rounded-lg';
+    'flex flex-col items-center w-[271px] md:w-[332px] h-[480px] rounded-lg shadow-base';
 
   return (
     <li className={!itemClass ? itemStyle : itemStyle + ' ' + itemClass}>
@@ -58,13 +58,15 @@ const EventsItem = ({
             </div>
           ))}
       </div>
-      <div className="inline-block py-4 px-4">
+      <div className="inline-block py-4 px-4 min-h-[200px]">
         <h3 className="text-[#1C1B1F] text-base font-medium">{title}</h3>
         <p className="max-h-[72px] text-[#49454F] mt-4 text-sm overflow-hidden">
           {text}
         </p>
         <Btn
-          customClass="absolute opacity-0 hover:opacity-100 "
+          customClass="absolute 
+          opacity-0 hover:opacity-100
+           hover:bg-hover-500 transition-colors"
           text="More info"
           onClick={() => onClick(id)}
         />

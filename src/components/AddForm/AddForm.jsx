@@ -155,7 +155,7 @@ const AddForm = () => {
         </label>
         <button
           type="submit"
-          className="bg-accent-500 text-white px-3 py-4 mt-10 rounded"
+          className="bg-accent-500 text-white px-3 py-4 mt-10 rounded cursor-pointer"
         >
           Add event
         </button>

@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import sprite from '../../images/icons/sprite.svg';
 
 const IconBtn = ({ icon, type, onClick, customClass, customIconClass }) => {
-  const btnClass = 'p-4 inline-flex justify-center items-center rounded-lg';
+  const btnClass =
+    'p-4 inline-flex justify-center items-center rounded-lg cursor-pointer';
   const IconClass = 'w-6 h-6';
   return (
     <button

@@ -9,7 +9,10 @@ const BackBtn = () => {
   };
 
   return (
-    <button className="flex gap-2 mb-6 text-accent-500" onClick={goBack}>
+    <button
+      className="flex gap-2 mb-6 text-accent-500 cursor-pointer"
+      onClick={goBack}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

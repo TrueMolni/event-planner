@@ -9,9 +9,10 @@ const LangSwitcher = () => {
   };
 
   return (
-    <div className="mm:absolute mm:right-[22px] ml-[22px] inline-block text-left ">
+    <div className="mm:absolute mm:right-[22px] ml-[22px] inline-block text-left">
       <select
-        className="block rounded-lg appearance-none text w-full shadow-base bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight"
+        className="block rounded-lg appearance-none text w-full shadow-base bg-white border 
+        border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight cursor-pointer"
         value={selectedLanguage}
         onChange={handleLanguageChange}
       >

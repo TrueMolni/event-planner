@@ -10,6 +10,7 @@ module.exports = {
         low: { 500: '6BD475' },
         divider: { 500: '#ACA7C3' },
         text: { 500: '#3F3F3F' },
+        hover: { 500: '#6243FF' },
       },
       padding: {
         '5px': '5px',
