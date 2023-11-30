@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Btn from 'shared/components/Btn/Btn';
 import image from '../../../../shared/images/defaults/default-vert.png';
 
+import css from './events-item.module.css';
+
 const EventsItem = ({
   id,
   img,
@@ -34,7 +36,7 @@ const EventsItem = ({
   const imageWrapperStyle = 'h-[280px] relative ';
   const imageStyle = 'w-full h-full rounded-lg';
   const itemStyle =
-    'flex flex-col items-center w-[271px] md:w-[332px] h-[480px] rounded-lg shadow-base';
+    'flex flex-col items-center w-[271px] md:w-[332px] h-[480px] rounded-lg shadow-base bg-white';
 
   return (
     <li className={!itemClass ? itemStyle : itemStyle + ' ' + itemClass}>
@@ -64,9 +66,10 @@ const EventsItem = ({
           {text}
         </p>
         <Btn
-          customClass="absolute 
-          opacity-0 hover:opacity-100
-           hover:bg-hover-500 transition-colors"
+          customClass={
+            css.btn +
+            ' absolute opacity-0 transition-all hover:bg-hover-500 transition-colors'
+          }
           text="More info"
           onClick={() => onClick(id)}
         />

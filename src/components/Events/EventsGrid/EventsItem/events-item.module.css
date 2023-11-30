@@ -1,0 +1,4 @@
+li:hover .btn,
+li:focus .btn {
+  opacity: 1;
+}

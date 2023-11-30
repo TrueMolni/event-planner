@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+<!-- ✅ Немає фавікона. Потрібно самостійно додавати фавікон, який відповідає темі тестового завдання. Це показує Ваше відношення до роботи і до деталей в цілому.
+✅ Не змінений title. Треба змінювати на title відповідно до сайту.
+✅ Не змінений або не прописаний мета-тег description. Треба змінювати/прописувати
+мета-тег description відповідно до сайту.
+✅ Всім активним кнопкам, посиланням,
+селектам треба задавати cursor pointer. Якщо кнопка не активна (disabled) їй не
+треба задавати cursor pointer, адже складається враження, що на кнопку можна
+клікнути.
+✅ Всім активним елементам треба задавати hover. Hover повинен бути
+реалізований плавно, слід не забувати додавати transition.
+✅ В усіх кнопках повинен бути прописаний type.
+Немає заголовка h1. Він повинен бути присутній на
+кожній сторінці, що індексується (якщо сторінка технічна, то він там не
+обов'язковий). Не слід забувати про семантику. Для поліпшення доступності та
+розуміння структури веб-сторінки, рекомендується використовувати належні
+семантичні теги. Усі svg, посилання, кнопки без текстового контенту повинні
+містити aria-label. Картинкам слід задавати width/height, щоб при зміні
+зображення не ламалася верстка. Контентні зображення повинні містити атрибут
+loading="lazy". Не слід в контейнер вкладати header, main, footer, тоді вони
+будуть здаватися обрізаними при наявності бекграунда. Треба робити навпаки - в
+header вкладаємо свій контейнер, в main вкладаємо свій контейнер і т.д. Слід
+притримуватися ТЗ та макета при виконанні тестового. Не треба змінювати його на
+свій розсуд. Можна придумувати щось своє лише коли робиш свій пет проєкт, в усіх
+інших випадках програміст має слідувати ТЗ та макету. В файлі README.md слід
+коротко розповідати про функціонал та особливості виконаного тестового завдання.
+Це як візитівка, і саме README.md справляє перше враження про проєкт, а також
+підказує чи вміє автор писати документацію. Якщо в репозиторії присутні зайві чи
+пусті файли, непотрібні коментарі - це справляє погане враження. Обов'язково
+перевіряйте свій репозиторій перед здачею тестового. Коміти повинні бути більш
+описові та інформативні, це допоможе в подальшій роботі в команді. Сторінки
+повинні бути винесені в окрему папку. Великі компоненти, такі як компоненти
+секцій, бажано виносити в окрему папку. Інші компоненти повинні бути винесені
+окремо в папці components. Код треба розділяти на більш дрібні
+перевикористовувані компоненти. Це дозволить краще організувати код і зробити
+його більш зрозумілим. Не бачу щоб після відправки форми було якесь повідомлення
+про це, бажано додавати користувачу якусь нотифікашку, адже він так може не
+зрозуміти що все гаразд, і навідправляти ще багато разів. Фільтрування подій за
+категоріями не виконане зовсім або не працює коректно. Форма створення події не
+має можливість вибору категорії. Можливість видаляти подію не реалізована або
+відпрацьовує неправильно. Відсутня можливість встановлювати пріоритет події.
+Відсутня можливість редагувати подію або редагування відбувається некоректно.
+При натисканні на кнопку Edit користувач не перенаправляється на сторінку
+редагування події. Пошук подій не реалізований або відпрацьовує некоректно.
+Підтримка різних мов відсутня. З точки зору семантики на сторінці у main повинні
+знаходитись секції, вони повинні мати заголовки. Тег секції відсутній, не
+доданий заголовок згідно з макетом. Описи подій у картках (заголовки та опис)
+розміщуються не за макетом, через обмежену ширину блоку. На таблеті та десктопі
+сторінка створення події не відповідає макету, присутній горизонтальний скрол на
+таблеті та десктопі. Не реалізований селект дати та часу на сторінці додавання
+події. Фільтр за категоріями не реалізований. Слабенька валідація форми.
+Некоректна валідація певних полів (відображає помилку, що поле обов'язкове, коли
+воно заповнене). Рекомендуємо більше розділяти код: великі допоміжні функції, як
+от схеми валідації та резолвери - виносити в окремі папки/файли, створювати
+перевикористовувані компоненти (інпути та ін.) Присутні помилки в консолі
+браузера.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Іконка випадаючого списку невірно спозиціонована, висить на середині сторінки.
+При наявності в картці події довшого опису кнопка вилазить за межі картки.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Загальний бал виконаної роботи – 5,5 із 10. -->

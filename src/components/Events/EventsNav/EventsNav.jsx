@@ -12,9 +12,9 @@ const EventsNav = () => {
 
   return (
     <div className="flex justify-end items-center gap-[24px] mb-10">
-      <IconBtn icon={iconPath[1]} customClass="disabled" />
+      <IconBtn icon={iconPath[1]} customClass="cursor-default disabled" />
       {/* <IconBtn icon={iconPath[0]} /> */}
-      <button className="cursor-pointer disabled">
+      <button className="cursor-default disabled">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
