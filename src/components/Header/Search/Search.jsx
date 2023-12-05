@@ -16,7 +16,10 @@ const Search = () => {
   const icons = ['#icon-search', '#icon-cross-small'];
 
   return (
-    <label className="flex gap-4 w-[272px] p-3 text-sm leading-[14px] text-accent-500 shadow-base rounded">
+    <label
+      className="flex gap-4 w-[272px] mm:w-full h-[48px] p-3 text-sm leading-[14px] 
+    text-accent-500 shadow-base rounded"
+    >
       <button>
         <svg className="w-6 h-6">
           <use href={sprite + icons[0]}></use>

@@ -23,6 +23,7 @@ const Events = () => {
 
   return (
     <div>
+      <h1 className="visually-hidden">Events Page</h1>
       <EventsNav />
       <EventsGrid list={list} />
     </div>
